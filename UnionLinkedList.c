@@ -7,12 +7,23 @@
 #include <stdlib.h>
 
 typedef struct Node{
-  int data;
-  struct Node* next;
+    int data;
+    struct Node* next;
 }Node;
 
-void append(){
-  
+void append(Node** phead, int data){
+    Node* newNode = NULL;
+    newNode->data = data;
+    newNode->next = NULL;
+    
+    Node* ptr = *phead;
+    if(*phead == NULL)
+        *phead = newNode;
+    else{
+        while(ptr->next != NULL)
+            ptr = ptr->next;
+        ptr->next = newNode;
+    }
 }
 
 int present(){
