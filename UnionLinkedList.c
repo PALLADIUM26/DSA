@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//creating node of linked list datastructure
 typedef struct Node{
     int data;
     struct Node* next;
