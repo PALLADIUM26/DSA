@@ -13,6 +13,7 @@ typedef struct Node{
     struct Node* next;
 }Node;
 
+//to insert at end of linked list
 void append(Node** phead, int data){
     Node* newNode = NULL;
     newNode->data = data;
