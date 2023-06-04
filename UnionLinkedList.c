@@ -34,6 +34,16 @@ void union(){
   
 }
 
+//to print elements of linked list
+void display(Node** phead){
+    Node* ptr = *phead;
+    while(ptr != NULL){
+        printf("%d ",ptr->data);
+        ptr = ptr->next;
+    }
+    printf("\n");
+}
+
 int main(){
     Node* head1 = NULL;
     Node* head2 = NULL;
