@@ -33,7 +33,7 @@ int present(){
   
 }
 
-void union(){
+void unionFun(){
   
 }
 
