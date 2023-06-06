@@ -61,6 +61,7 @@ int main(){
         append(&head1, data);
     }
     printf("Elements of 1st Linked List: ");
+    display(&head1);
 
     printf("Enter no. of elements of 2nd Linked List: ");
     scanf("%d",&n2);
@@ -69,7 +70,10 @@ int main(){
         append(&head2, data);
     }
     printf("Elements of 2nd Linked List: ");
+    display(&head2);
 
     unionFunc(&head1, &head2);
+    display(&head1);
+
     return 0;
 }
