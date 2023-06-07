@@ -33,8 +33,14 @@ int present(){
   
 }
 
-void unionFun(){
-  
+//to form union of 2 linkded lists
+void unionFunc(Node** phead1, Node** phead2){
+    Node* ptr = *phead2;
+    while(ptr != NULL){
+        if(!present(phead1, ptr->data))
+            append(phead1, ptr->data);
+        ptr = ptr->next;
+    }
 }
 
 //to print elements of linked list
