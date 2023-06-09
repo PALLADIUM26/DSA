@@ -29,8 +29,18 @@ void append(Node** phead, int data){
     }
 }
 
-int present(){
-  
+//to check if data is present in any node of linked list
+int present(Node** phead, int data){
+    Node* ptr = *phead;
+    int flag = 0;
+    while(ptr != NULL){
+        if(ptr->data == data){
+            flag = 1;
+            break;
+        }
+        ptr = ptr->next;
+    }
+    return flag;
 }
 
 //to form union of 2 linkded lists
