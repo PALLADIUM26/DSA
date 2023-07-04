@@ -26,6 +26,7 @@ void countSort(int a[], int n){
             i++;
     }
 }
+
 int main(){
     int arr[20];
     int i, n;
