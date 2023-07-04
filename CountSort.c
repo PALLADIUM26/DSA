@@ -1,3 +1,5 @@
+//count sort algorithm
+
 #include <stdio.h>
 
 void countSort(int a[], int n){
