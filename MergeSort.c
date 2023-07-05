@@ -31,3 +31,13 @@ void merge(int a[], int mid, int low, int high){
         a[i] = ar2[i];
     }
 }
+
+void mergeSort(int a[],int low, int high){
+    int mid;
+    if(low < high){
+        mid = (low + high)/2;
+        mergeSort(a, low, mid);
+        mergeSort(a, mid+1, high);
+        merge(a, mid, low, high);
+    }
+}
