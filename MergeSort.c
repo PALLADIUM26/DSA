@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 void merge(int a[], int mid, int low, int high){
     int ar2[100];
     int i, j, k;
