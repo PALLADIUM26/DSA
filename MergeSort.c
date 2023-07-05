@@ -41,3 +41,31 @@ void mergeSort(int a[],int low, int high){
         merge(a, mid, low, high);
     }
 }
+
+
+int main(){
+    int arr[20];
+    int i, n;
+
+    printf("Enter no of elements of array: ");
+    scanf("%d", &n);
+
+    for(i=0; i<n; i++){
+        printf("Enter element %d: ",(i+1));
+        scanf("%d",&arr[i]);
+    }
+
+    printf("Unsorted Array: ");
+    for(i=0; i<n; i++)
+        printf("%d ",arr[i]);
+    printf("\n");
+    
+    mergeSort(arr, 0, n-1);
+    
+    printf("Sorted Array: ");
+    for(i=0; i<n; i++)
+        printf("%d ",arr[i]);
+    printf("\n");
+
+    return 0;
+}
