@@ -1,3 +1,3 @@
-# DS
-In this repository the code for various Datastructures are present along with their functionalities.
+# DSA
+In this repository the code for various Datastructures and Algorithms are present along with their functionalities.
 C Language is used.
