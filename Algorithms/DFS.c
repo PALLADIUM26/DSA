@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 #define MAX_VERTICES 10
-
 #define WHITE 0
 #define GRAY 1
 #define BLACK 2
@@ -13,23 +12,35 @@ int discovery_time[MAX_VERTICES];
 int finish_time[MAX_VERTICES];
 int time = 0;
 
-void DFS(int adj_matrix[MAX_VERTICES][MAX_VERTICES], int start_vertex, int num_vertices) {
+void DFS_visit(int adj_matrix[MAX_VERTICES][MAX_VERTICES], int start_vertex, int num_vertices) {
     colors[start_vertex] = GRAY;
-    parent[start_vertex] = -1;
     discovery_time[start_vertex] = time++;
-
     printf("Visited: %d (GRAY)\n", start_vertex);
 
     for (int i = 0; i < num_vertices; i++) {
         if (adj_matrix[start_vertex][i] == 1 && colors[i] == WHITE) {
             parent[i] = start_vertex;
-            DFS(adj_matrix, i, num_vertices);
+            DFS_visit(adj_matrix, i, num_vertices);
         }
     }
 
     colors[start_vertex] = BLACK;
     finish_time[start_vertex] = time++;
     printf("Visited: %d (BLACK)\n", start_vertex);
+}
+
+void DFS(int adj_matrix[MAX_VERTICES][MAX_VERTICES], int num_vertices){
+    for (int i = 0; i < num_vertices; i++) {
+        colors[i] = WHITE;
+        parent[i] = -1;
+        discovery_time[i] = -1;
+        finish_time[i] = -1;
+    }
+
+    for (int i = 0; i < num_vertices; i++){
+        if(colors[i] == WHITE)
+        DFS_visit(adj_matrix, i, num_vertices);
+    }
 }
 
 int main() {
@@ -43,14 +54,7 @@ int main() {
         {0, 0, 0, 0, 1, 0}
     };
 
-    for (int i = 0; i < num_vertices; i++) {
-        colors[i] = WHITE;
-        parent[i] = -1;
-        discovery_time[i] = -1;
-        finish_time[i] = -1;
-    }
-
-    DFS(adj_matrix, 0, num_vertices);
+    DFS(adj_matrix, num_vertices);
 
     return 0;
 }
