@@ -6,12 +6,9 @@ int max(int a, int b){
 
 int lcs(char *a,char *b){
     int m = strlen(a);
-    int n = strlen(b);
-    int x = (m>n)?m:n;
-    int y = (m<n)?m:n;
-    m = y;
-    n = x;
-
+    int n = strlen(b);    
+    // (m < n)
+    
     int lcs[m+1][n+1];
 
     for(int i=0;i<=m;i++)
@@ -41,9 +38,9 @@ int main()
     int num1,num2;
     char a[100];
     char b[100];
-    printf("Enter Your String 1: ");
+    printf("Enter shorter String: ");
     scanf("%s", a);
-    printf("\nEnter Your 2nd String 2: ");
+    printf("\nEnter longer String: ");
     scanf("%s", b);
     int length=lcs(a,b);
     printf("\nLength of Longest Common Subsequence: %d\n", length);
