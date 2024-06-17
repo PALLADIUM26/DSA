@@ -103,7 +103,7 @@ void display(stack* s){
 	printf("\n");
 }
 
-
+//some changes
 int main(){
 	
 	stack s1; //stack storing the operators
