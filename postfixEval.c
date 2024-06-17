@@ -83,7 +83,7 @@ void postfixEval(stack* s, char* postfix){
 		}
 	}
 }
-
+//small change
 int main(){
 	stack st; //stack storing the operators
 	init(&st, 100);
